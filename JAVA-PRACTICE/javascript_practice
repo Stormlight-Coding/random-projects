@@ -8,6 +8,7 @@ while (daysLeft > 0) {
   if (daysLeft < 30 && daysLeft > 10) {
   console.log(daysLeft + " until my birthday!");
   }
+
   if (daysLeft <= 10) {
     console.log(daysLeft + " days left! Almost here!!");
   }
@@ -16,6 +17,7 @@ while (daysLeft > 0) {
   }
   daysLeft = daysLeft - 1
 }
+console.log('new comment!');
 
 // Double excercise loop
 
