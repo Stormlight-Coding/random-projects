@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add an Item!</title>
+    <style media="screen">
+      header{
+        text-align: right;
+        margin-right: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <p><a href="/exam/dashboard">Home</a>   |   <a href="/exam/logout">Logout</a></p>
+    </header>
+    <h1>Add a Trip!</h1>
+    {% if messages %}
+    <ul>
+    		{% for message in messages %}
+    		<li>{{ message }}</li>
+    		{% endfor %}
+    </ul>
+    {% endif %}
+        <form id="create" action="/exam/create" method="POST">
+        {% csrf_token %}
+        Destination:<input type="text" name="destination" id="destination"><br><br>
+        Description:<input type="text" name="description" id="description"><br><br>
+        Travel Date From:<input type="date" name="start" min="" value=""/><br><br>
+        Travel Date To:<input type="date" name="end" value=""/><br><br>
+        <input type="submit" value="Add">
+        </form>
+  </body>
+</html>
+
+<!-- '%Y-%m-%d' -->

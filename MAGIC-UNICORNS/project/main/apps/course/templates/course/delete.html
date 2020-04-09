@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cofirm</title>
+  </head>
+  <body>
+    <h3>Are you sure you want to delete the following course?</h3>
+      <p>Course: {{id.name}}</p><br>
+      <p>Description: {{id.desc}}</p><br>
+      <button type="button"><a href="/course/{{id.id}}/delete">Delete</a></button>
+      <button type="button"><a href="/course">No</a></button>
+  </body>
+</html>

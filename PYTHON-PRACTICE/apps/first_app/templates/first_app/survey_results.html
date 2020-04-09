@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Survey Results</title>
+    {% load static %}
+    <!-- The line above tells Django to be ready to listen for static files -->
+    <link rel="stylesheet" href="{% static 'first_app/css/main.css' %}" media="screen" title="no title"  charset="utf-8">
+  </head>
+  <body>
+    <div class="header">
+      <h4>Welcome {{first_name}} {{last_name}}</h4>
+      <p><a href="/">Home</a></p>
+    </div>
+    <h1>Survey Results</h1>
+      <div class="results">
+        <h3>Name: {{first_name}} {{last_name}}</h3>
+          <h4>Favorite Genre: {{genre}}</h4>
+          <h4>Preferred Language: {{language}}</h4>
+      </div>
+      <form class="logout" action="logout" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Logout">
+      </form>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login and Registration</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<style>
+  #login{
+    margin-left: 400px;
+    margin-top: -335px;
+  }
+  #login input{
+    display: inline-block;
+  }
+</style>
+</head>
+<body>
+<h1>Register!</h1>
+{% if messages %}
+<ul>
+		{% for message in messages %}
+		<li>{{ message }}</li>
+		{% endfor %}
+</ul>
+{% endif %}
+	<form action='/exam/register' method='POST'>
+		{% csrf_token %}
+	    <label for="name">Name:<br><input type="text" name="name" id="name"></label><br><br>
+	    <label for="username">Username:<br><input type="text" name="username" id="username"></label><br><br>
+	    <label for="password">Create Password:<br><input type="password" name="password" id="password"></label><br><br>
+	    <label for="confirm_pw">Confirm Password:<br><input type="password" name="confirm_pw" id="confirm_pw"></label><br><br>
+      <input type="submit" value="Register"></label><br>
+  	</form>
+	<form id="login" action="exam/login" method="POST">
+    <h1>Login:</h1>
+		{% csrf_token %}
+		Username:<input type="text" name="username" id="username"><br><br>
+		Password:<input type="password" name="password" id="password"><br><br>
+		<input type="submit" value="Login">
+  	</form>
+
+</body>
+</html>

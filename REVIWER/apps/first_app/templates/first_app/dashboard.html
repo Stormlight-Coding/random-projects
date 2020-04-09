@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <header>
+            <h2>Welcome {{ user.name }}</h2>
+            <p><a href="/first_app/logout">Logout</a>   |   <a href="/first_app/add">Add a New Book/Review</a></p>
+        </header><br><br>
+        <h3>Recent Book Reviews:</h3>
+        {% for z in x %}
+        <tr>
+            <td><a href="/first_app/{{ z.id }}/book_info">{{ z.title }}</a></td><br>
+            <td>{{ z.users.username }} Says:</td><br>
+            <td>Review: {{ z.review }}</td><br>
+            <td>Rating: {{ z.rating }}</td><br>
+        </tr><br><br>
+        {%endfor%}
+        {% for z in book %}
+        <tr>
+            <td><a href="/first_app/{{ z.id }}/book_info">{{ z.title }}</a></td><br>
+            <td>{{ z.users.username }} Says:</td><br>
+            <td>Review: {{ z.review }}</td><br>
+            <td>Rating: {{ z.rating }}</td><br>
+        </tr><br><br>
+        {%endfor%}
+
+  </body>
+</html>

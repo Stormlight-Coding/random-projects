@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style media="screen">
+          header {
+            text-align: right;
+            margin-right: 100px;
+          }
+          #add {
+            margin-left: 450px;
+          }
+        </style>
+    </head>
+    <body>
+      <header>
+        <p><a href="/exam/logout">Logout</a>
+      </header>
+      <h2>Welcome {{ user.name }}</h2>
+      <h3>Your Trip Schedules:</h3>
+                <table border="1">
+                    <tr>
+                        <th>Destination</th>
+                        <th>Travel Start Date</th>
+                        <th>Travel End Date</th>
+                        <th>Plan</th>
+                    </tr>
+                  {% for x in my_trip %}
+                  <tr>
+                      <td><a href="/exam/{{x.id}}/destination">{{x.destination}}</a></td>
+                      <td>{{x.start}}</td>
+                      <td>{{x.end}}</td>
+                      <td>{{x.description}}</td>
+                  </tr>
+                  {%endfor%}
+                  {% for z in x %}
+                  <tr>
+                      <td><a href="/exam/{{z.id}}/destination">{{z.destination}}</a></td>
+                      <td>{{ z.start }}</td>
+                      <td>{{  z.end }}</td>
+                      <td>{{z.description}}</td>
+                  </tr>
+                  {%endfor%}
+                </table>
+            <br><br>
+
+            <h3>Other User's Travel Plans</h3>
+            <table border="1">
+                <tr>
+                    <th>Name</th>
+                    <th>Destination</th>
+                    <th>Travel Start Date</th>
+                    <th>Travel End Date</th>
+                    <th>Do You Want to Join?</th>
+                </tr>
+              {% for x in item %}
+              <tr>
+                  <td>{{x.users.name}}</td>
+                  <td><a href="/exam/{{x.id}}/destination">{{x.destination}}</a></td>
+                  <td>{{x.start}}</td>
+                  <td>{{x.end}}</td>
+                  <td><a href="/exam/{{x.id}}/include">Join</a></td>
+              </tr>
+              {%endfor%}
+            </table>
+              <p id="add"><a href="/exam/add">Add Travel Plan</a></p>
+
+  </body>
+</html>

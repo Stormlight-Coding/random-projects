@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Amadon.com</title>
+    {% load static %}
+      <!-- The line above tells Django to be ready to listen for static files -->
+      <link rel="stylesheet" href="{% static 'first_app/css/main.css' %}" media="screen" title="no title"  charset="utf-8">
+  </head>
+  <body>
+    <div class="header">
+      <h4>Welcome {{first_name}} {{last_name}}</h4>
+      <p><a href="/">Home</a></p>
+    </div>
+    <h1>Welcome to the Amadon Shopping Place!</h1>
+    <table>
+      <form action="buy" method="post">
+      {% csrf_token %}
+      <tr>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <td>Apple</td>
+        <td><select name="quantity">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select></td>
+        <td><input type='hidden' name='product_id' value='1' />$4.99   <input style="color: blue" type='submit' value='Buy!'/>
+        </td>
+      </tr>
+      </form>
+      <tr>
+      <form action="buy" method="post">
+      {% csrf_token %}
+          <td>Banana</td>
+          <td><select name="quantity">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select></td>
+          <td><input type='hidden' name='product_id' value='2' />$2.99   <input style="color: blue" type='submit' value='Buy!'/>
+          </td>
+        </tr>
+        </form>
+        <tr>
+        <form action="buy" method="post">
+        {% csrf_token %}
+            <td>Orange</td>
+            <td><select name="quantity">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select></td>
+            <td><input type='hidden' name='product_id' value='3' />$3.99   <input style="color: blue" type='submit' value='Buy!'/>
+            </td>
+          </tr>
+          </form>
+    </table>
+    <form class="logout" action="logout" method="post">
+      {% csrf_token %}
+      <input type="submit" value="Logout">
+    </form>
+  </body>
+</html>

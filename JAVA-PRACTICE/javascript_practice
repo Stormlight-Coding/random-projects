@@ -1,0 +1,124 @@
+// Birthday Countdown
+
+var daysLeft = 60;
+while (daysLeft > 0) {
+  if (daysLeft >= 30) {
+  console.log(daysLeft + " until my birthday! So far away...");
+  }
+  if (daysLeft < 30 && daysLeft > 10) {
+  console.log(daysLeft + " until my birthday!");
+  }
+  if (daysLeft <= 10) {
+    console.log(daysLeft + " days left! Almost here!!");
+  }
+  if (daysLeft == 0) {
+    console.log("IT'S MY BIRTHDAY!!");
+  }
+  daysLeft = daysLeft - 1
+}
+
+// Double excercise loop
+
+var money = 0.01
+var days = 30
+for (i = 1; i < days; i++) {
+  money = money * 2;
+  console.log(money);
+  console.log(i);
+}
+
+// Listing an Array//
+
+var names = ['james','jill','jane','jack'];
+for (i = 0; i < names.length; i++) {
+  console.log(i + " -> " + names[i]);
+}
+
+// Random number example.. (between 0-50)
+
+Math.trunc(Math.random() * 50)
+
+// Random chance (slot machine)...
+
+function slots(num) {
+  var quarters = num;
+  while (quarters > 0) {
+    var chance = Math.floor(Math.random() * 100);
+    if (chance == 1){
+      var winnings = Math.floor(Math.random() * 100) + 50;
+      quarters = quarters + winnings;
+      console.log("Congrats! You have won " + winnings + " quarters! You now have a total of " + quarters + " !!");
+    }
+    else if (quarters >= 1000) {
+      return quarters
+    }
+    else {
+      console.log("Better luck next time...");
+    }
+  }
+}
+slots(50)
+
+// Numbers only from Array...
+
+var newArray = [1, "apple",15, -3, "orange", 0.5];
+var array = [];
+for (i = 0; i < newArray.length; i ++) {
+  if (typeof newArray[i] != 'number') {
+    continue
+  }
+  else {
+    array.push(newArray[i])
+  }
+}
+console.log(array);
+
+// JavaScript Objects
+
+var Dany = {
+  first_name : 'Daenerys',
+  last_name : 'Targaryen',
+  age : 22,
+  allegiance : 'House Targaryen',
+  ancestory : 'Valyrian',
+  titles : ['Queen of the Andals, the Rhoynar and the First Men', 'Lady Regent of the Seven Kingdoms', 'Protector of the Realm', 'Khaleesi of the Great Grass Sea', 'Breaker of Chains', 'Mother of Dragons', 'Queen of Meereen']
+}
+console.log(Dany.titles);
+
+// Stundents and Instructors...
+// excercise 1
+
+var students = [
+     {first_name:  'Michael', last_name : 'Jordan'},
+     {first_name : 'John', last_name : 'Rosales'},
+     {first_name : 'Mark', last_name : 'Guillen'},
+     {first_name : 'KB', last_name : 'Tonel'}
+]
+for (var i = 0; i < students.length; i++){
+  console.log(students[i].first_name + " " + students[i].last_name);
+}
+
+// excercise 2 (iterate through dict)
+
+var users = {
+ 'Students': [
+     {first_name:  'Michael', last_name : 'Jordan'},
+     {first_name : 'John', last_name : 'Rosales'},
+     {first_name : 'Mark', last_name : 'Guillen'},
+     {first_name : 'KB', last_name : 'Tonel'}
+  ],
+ 'Instructors': [
+     {first_name : 'Michael', last_name : 'Choi'},
+     {first_name : 'Martin', last_name : 'Puryear'}
+  ]
+ }
+ for (var group in users) {
+   console.log(group);
+   var count = 1;
+   for (var x in users[group]){
+     var name = users[group][x].first_name + users[group][x].last_name;
+     var n = name.length
+     console.log(count + " - " + users[group][x].first_name + " " + users[group][x].last_name + " - " + n);
+     count = count + 1;
+   }
+ }

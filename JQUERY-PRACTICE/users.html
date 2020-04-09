@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Users</title>
+	<style>
+		body{
+			width: 500px;
+			background-color: grey;
+		}
+		.header{
+			border: 2px solid black;
+		}
+		ul{
+			margin-left: -30px;
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+		li{
+			display: inline-block;
+			font-weight: bold;
+			padding-right: 30px;
+		}
+		h1{
+			border-bottom: 3px solid black;
+			width: 275px;
+		}
+		.main{
+			width: 500px;
+		}
+		form{
+			width: 275px;
+			display: inline-block;
+		}
+		input{
+			float: right;
+			height: 15px;
+			margin-top: 12px;
+		}
+		p{
+			display: inline-block;
+			width: 140px;
+			text-align: right;
+		}
+		table{
+			border: 2px solid black;
+			margin-top: 100px;
+			width: inherit;
+		}
+		td, th{
+			border: 1px solid black;
+		}
+
+	</style>
+
+
+
+	<script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+	<script>
+
+		$(document).ready(function(){
+
+			$('form').submit(function(){
+					var info = $('#f_name').val();
+					$('#first').append(info + "<br>");
+					return false
+			});
+
+			$('form').submit(function(){
+					var info = $('#l_name').val();
+					$('#last').append(info + "<br>");
+					return false
+			});
+
+			$('form').submit(function(){
+					var info = $('#e_address').val();
+					$('#email').append(info + "<br>");
+					return false
+			});
+
+			$('form').submit(function(){
+					var info = $('#contact_no').val();
+					$('#contact').append(info + "<br>");
+					return false
+			});
+		});
+
+
+
+
+
+
+	</script>
+
+
+
+<body>
+	<div class="header">
+		<ul>
+			<li>First Name</li>
+			<li>Last Name</li>
+			<li>Email Address</li>
+			<li>Contact #</li>
+		</ul>
+	</div>
+	<h1>Add User</h1>
+		<form>
+			<p>First Name:</p><input id="f_name" type="text" value="First Name"/>
+			<p>Last Name:</p><input id="l_name" type="text" value="Last Name"/>
+			<p>Email Address:</p><input id="e_address" type="text" value="Email Address"/>
+			<p>Contact No.:</p><input id="contact_no" type="text" value="Phone #"/>
+			<input type="submit" value="Add User">
+	</form>
+	<div class="data">
+		<table>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email Address</th>
+				<th>Contact No.</th>
+			</tr>
+			<tr id="table_row">
+				<td id="first"></td>
+				<td id="last"></td>
+				<td id="email"></td>
+				<td id="contact"></td>
+			</tr>
+		</table>
+	</div>
+
+
+</body>
+</html>

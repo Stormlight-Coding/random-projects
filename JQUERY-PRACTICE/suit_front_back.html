@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('img').hover(function() {
+                $('#unseen').show();
+                $('#seen').hide();
+            });
+            $('img').mouseout(function() {
+                $('#seen').show();
+                $('#unseen').hide();
+            });
+        });
+    </script>
+    <title></title>
+  </head>
+  <body>
+      <img id="seen" src="http://www.emenfashion.com/wp-content/uploads/2011/06/Armani-Collezioni-dark-grey-wool-2-button-suit-with-flat-front-pants-1.jpg">
+      <img id="unseen" style="display: none" src="http://www.emenfashion.com/wp-content/uploads/2011/06/Armani-Collezioni-dark-grey-wool-2-button-suit-with-flat-front-pants-2.jpg">
+  </body>
+</html>

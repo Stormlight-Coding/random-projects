@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SW JS Query</title>
+<style>
+  p {
+    margin: 8px;
+    font-size: 16px;
+  }
+  .red {
+    color: red;
+  }
+  .highlight {
+    background: yellow;
+  }
+  </style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+
+	<script>
+     $(document).ready(function(){
+
+     	$('#class button').click(function(){
+     		$('#class p').addClass("red");
+     	});
+
+     	$('#slide button').click(function(){
+     		$('#slide img').slideToggle(5000);
+     	});
+
+     	$('#append button').click(function(){
+     		$('#append p').append('This is a new paragraph!');
+     	});
+
+     	$('#hide button').click(function(){
+     		$('#hide p').hide('slow');
+     	});
+
+     	$('#show button').click(function(){
+     		$('#show img').show(5000);
+     	});
+
+     	$('#toggle button').click(function(){
+     		$('#toggle p').toggle();
+     	});
+
+     	$('#slide_down button').click(function(){
+     		if($('#slide_down img').is(':hidden')){
+     			$('#slide_down img').slideDown(5000);
+     		} else {
+     			$('#slide_down img').slideUp(5000);
+     		}
+     	});
+
+     	$('#slide_up button').click(function(){
+     		if($('#slide_up img').is(':hidden')){
+     			$('#slide_up img').show(5000);
+     		} else {
+     			$('#slide_up img').slideUp(5000);
+     		}
+     	});
+
+     	$('#fade_in button').click(function(){
+     		$('#fade_in img').fadeIn(8000);
+     	});
+
+     	$('#fade_out button').click(function(){
+     		$('#fade_out img').fadeOut(10000);
+     	});
+
+     	$('#before button').click(function(){
+     		$('#before p').before('<b>May the Force be with you...</b>')
+     	});
+
+     	$('#after button').click(function(){
+     		$('#after p').after('<b>Nerf Herder</b>')
+     	});
+
+     	$('#html button').click(function(){
+     		$('#html p').html('<b>Wookie</b>');
+     		$('#html span').html('<b>Wookie</b>');
+     	});
+
+     	$('#val input').keyup(function(){
+    var value = $( this ).val();
+    	$
+    	$('#val p' ).text( value );
+  		})
+  	.keyup();
+  });
+</script>
+
+</head>
+<body>
+	<div id="class">
+		<h1>Add Class</h1>
+		<button>Add Class</button>
+		<p>Click the button to add class 'red' to this paragraph</p>
+	</div>
+	<div id="slide">
+		<h1>Slide Toggle</h1>
+		<button>Slidetoggle</button>
+		<p>Click the button to slidetoggle a hidden image.</p>
+		<img src="https://s-media-cache-ak0.pinimg.com/736x/23/69/60/236960ec5800a56e2b6fab97441dd691--darth-bader-the-script.jpg" height="300" width="200">
+	</div>
+	<div id="append">
+		<h1>Append</h1>
+		<button>Append</button>
+		<p>Click the button to append a new paragraph!</p>
+	</div>
+	<div id="hide">
+		<h1>Hide</h1>
+		<button>Hide</button>
+		<p>Click the button to hide this paragraph!</p>
+	</div>
+	<div id="show">
+		<h1>Show</h1>
+		<button>Show</button>
+		<img style="display: none" = non src="https://vignette2.wikia.nocookie.net/starwars/images/d/d6/Yoda_SWSB.png/revision/latest?cb=20150206140125" height="300" width="200">
+		<p>Click the button to see the hidden image!</p>
+	</div>
+	<div id="toggle">
+		<h1>Toggle</h1>
+		<button>Toggle</button>
+		<p>There is no emotion, there is peace.</p>
+		<p style="display: none">There is no ignorance, there is knowledge.</p>
+		<p style="display: none">There is no passion, there is serenity.</p>
+		<p style="display: none">There is no chaos, there is harmony.</p>
+		<p style="display: none">There is no death, there is the Force</p>
+	</div>
+	<div id="slide_down">
+		<h1>Slide Down</h1>
+		<button>Slide Down</button>
+		<img style="display: none" src="https://lh6.ggpht.com/h1ZYgeQ1oVS0VIBkcl8qVLst_HTViVWxR_shjEhrxlUxteVKQkS6jAlIKO0319tdNQ=h900" height="400" width="200">
+		<p>Click the button to slide down hidden image!</p>
+	</div>
+	<div id="slide_up">
+		<h1>Slide Up</h1>
+		<button>Slide Up</button>
+		<img src="https://lh6.ggpht.com/h1ZYgeQ1oVS0VIBkcl8qVLst_HTViVWxR_shjEhrxlUxteVKQkS6jAlIKO0319tdNQ=h900" height="400" width="200">
+		<p>Click the button to slide up hidden image!</p>
+	</div>
+	<div id="fade_in">
+		<h1>Fade In</h1>
+		<button>Fade In</button>
+		<img style="display: none" src="https://upload.wikimedia.org/wikipedia/en/8/8f/Emperor_RotJ.png" height="300" width="200">
+		<p>Click the button to see the hidden image fade in!</p>
+	</div>
+	<div id="fade_out">
+		<h1>Fade Out</h1>
+		<button>Fade Out</button>
+		<img src="https://vignette3.wikia.nocookie.net/starwars/images/2/2f/Deathstar_negwt.png/revision/latest?cb=20161002160419" height="500" width="500">
+		<p>Click the button to make the Death Star go away!</p>
+	</div>
+	<div id="before">
+		<h1>Before</h1>
+		<button>Before</button>
+		<p>Click the button to add to before this paragraph!</p>
+	</div>
+	<div id="after">
+		<h1>After</h1>
+		<button>After</button>
+		<p>Click the button to add to after this paragraph!</p>
+	</div>
+	<div id="html">
+		<h1>HTML</h1>
+		<button>HTML</button>
+		<p>Click the button to see HTML stuffs!</p>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+	<div id="val">
+	<h1>Value</h1>
+		<button>Value</button>
+		<input type="text" value="enter code here!">
+		<p>hello</p>
+	</div>
+</body>
+</html>

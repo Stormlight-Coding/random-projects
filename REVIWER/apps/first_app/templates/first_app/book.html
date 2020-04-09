@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Book Info</title>
+  </head>
+  <body>
+    <h2>{{ book.title }}</h2>
+    {% for z in name %}
+    <p>{{ z.name }} says:</p>
+    <p>{{ book.review }}</p>
+    {% endfor %}
+    <h3>Add your review!</h3>
+    <form id="add_review" action="/first_app/{{book.id}}/add_review" method="POST">
+    {% csrf_token %}
+    <textarea name="review" rows="10" cols="30">
+    </textarea><br>
+    <select name="rating">
+      <option value="1">1 Star</option>
+      <option value="2">2 Stars</option>
+      <option value="3">3 Stars</option>
+      <option value="4">4 Stars</option>
+      <option value="5">5 Stars</option>
+    </select>
+    <input type="submit" value="Add">
+    </form>
+
+
+  </body>
+</html>

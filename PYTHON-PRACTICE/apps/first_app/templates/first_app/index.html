@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Jonathan Poso's Cool Python Page!</title>
+    {% load static %}
+      <!-- The line above tells Django to be ready to listen for static files -->
+      <link rel="stylesheet" href="{% static 'first_app/css/main.css' %}" media="screen" title="no title"  charset="utf-8">
+  </head>
+  <body>
+    <h1>Hello World</h1>
+      <h3>Let's look at the different things I learned to do....</h3><br><br>
+      <h3>Let us start by asking your name...</h3>
+        <form action="/create" method="POST">
+        	{% csrf_token %}
+        	First Name: <input type="text" name="first_name" placeholder="John">
+          Last Name: <input type="text" name= "last_name" placeholder="Smith"></textarea>
+        	<input type="submit" value="submit">
+        </form><br>
+        <h3>Welcome {{first_name}} {{last_name}}</h3>
+        <p><a href="/random">Link to Random Word</link></a></p>
+        <p><a href="/survey">Link to Survey</a></p>
+        <p><a href="/session_words">Link to Session Words</a></p>
+        <p><a href="/amadon_homepage">Link to Adamon</a></p>
+        <p><a href="/">Link to Ninja Gold</a></p>
+  </body>
+</html>
+
+<!-- CREATE A SESSION SO THAT THE USERS NAME TRANSFERS TO NEW PAGES!!!!  -->

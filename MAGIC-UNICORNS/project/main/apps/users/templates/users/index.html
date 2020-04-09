@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Users</title>
+  </head>
+  <body>
+    <h1>Users</h1>
+    <table border="1">
+      <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Created At</th>
+          <th>Actions</th>
+      </tr>
+    {% for banana in name%}
+    <tr>
+        <td>{{banana.first_name}}</td>
+        <td>{{banana.last_name}}</td>
+        <td>{{banana.email}}</td>
+        <td>{{banana.created_at}}</td>
+        <td><a href="/users/{{banana.id}}/show">Show</a></td>
+        <td><a href="/users/{{banana.id}}/delete">Delete</a></td>
+        <td><a href="/users/{{banana.id}}/edit">Edit</a></td>
+    </tr>
+    {%endfor%}
+    </table>
+
+    <a href="/users/new">Add a new user</a>
+
+  </body>
+</html>
